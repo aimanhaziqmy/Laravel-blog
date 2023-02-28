@@ -1,10 +1,7 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+
+
+@extends('layouts.default')
+@section('content')
 <body>
     @auth
         <p>Congrats you are logged in</p>
@@ -12,6 +9,8 @@
             @csrf
             <button>Logout</button>
         </form>
+
+        <x-forms.input type="success" />
 
     <div style="border: 3px solid black;">
         <h2>Create a new posts</h2>
@@ -37,6 +36,10 @@
                 </form>
             </div>
         @endforeach
+
+        @empty($posts)
+            <p>No posts found</p>
+        @endempty
     @else
 
     <div style="border: 3px solid black;">
@@ -60,5 +63,4 @@
     </div>
     @endauth
 
-</body>
-</html>
+@stop
