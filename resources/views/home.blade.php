@@ -22,6 +22,7 @@
         </form>
     </div>
 
+
     <div style="border: 3px solid black;">
         <h2>All Posts</h2>
         @foreach ($posts as $post)
